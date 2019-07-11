@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oyH-sE-JOg">
+                                <rect key="frame" x="197" y="443" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ln7-Rn-Ysc">
+                                <rect key="frame" x="124" y="104" width="166" height="30"/>
+                                <state key="normal" title="DemoForSequentialAPIs"/>
+                                <connections>
+                                    <action selector="demoForSequentialAPIs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eM0-Kf-fcg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ku-aF-8Vj">
+                                <rect key="frame" x="124" y="154" width="166" height="30"/>
+                                <state key="normal" title="DemoForConcurentAPIs"/>
+                                <connections>
+                                    <action selector="demoForConcurentAPIs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YAB-6c-QH7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Saq-vM-j5e">
+                                <rect key="frame" x="148.5" y="204" width="117" height="30"/>
+                                <state key="normal" title="DemoForFailAPIs"/>
+                                <connections>
+                                    <action selector="demoForFailAPIs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zG7-Fs-5n8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNt-9g-9VS">
+                                <rect key="frame" x="180" y="254" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZK-I1-hDI">
+                                <rect key="frame" x="8" y="283" width="398" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="xn8-EN-CIL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1Ku-aF-8Vj" firstAttribute="top" secondItem="Ln7-Rn-Ysc" secondAttribute="bottom" constant="20" id="7FX-B6-Ebc"/>
+                            <constraint firstItem="Ln7-Rn-Ysc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8nG-vH-3ZA"/>
+                            <constraint firstItem="Ln7-Rn-Ysc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="D5z-SB-or8"/>
+                            <constraint firstItem="7ZK-I1-hDI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="DXp-Hp-e6M"/>
+                            <constraint firstItem="oyH-sE-JOg" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="JcA-Ao-GIA"/>
+                            <constraint firstItem="GNt-9g-9VS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="RTv-aM-tcY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7ZK-I1-hDI" secondAttribute="trailing" constant="8" id="TtY-BV-d8z"/>
+                            <constraint firstItem="GNt-9g-9VS" firstAttribute="top" secondItem="Saq-vM-j5e" secondAttribute="bottom" constant="20" id="TzB-Dt-HNd"/>
+                            <constraint firstItem="Saq-vM-j5e" firstAttribute="top" secondItem="1Ku-aF-8Vj" secondAttribute="bottom" constant="20" id="aVC-oh-n3I"/>
+                            <constraint firstItem="Saq-vM-j5e" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ene-QL-5rC"/>
+                            <constraint firstItem="7ZK-I1-hDI" firstAttribute="top" secondItem="GNt-9g-9VS" secondAttribute="bottom" constant="8" id="gmY-jB-xBt"/>
+                            <constraint firstItem="1Ku-aF-8Vj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tUa-Xt-YR8"/>
+                            <constraint firstItem="oyH-sE-JOg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="uBe-jh-D4k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="loadingView" destination="oyH-sE-JOg" id="MJi-2Q-1Bs"/>
+                        <outlet property="statusLabel" destination="7ZK-I1-hDI" id="iOK-E8-iKl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

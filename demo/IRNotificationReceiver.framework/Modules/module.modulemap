@@ -1,0 +1,6 @@
+framework module IRNotificationReceiver {
+  umbrella header "IRNotificationReceiver.h"
+
+  export *
+  module * { export * }
+}
