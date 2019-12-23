@@ -46,14 +46,15 @@ notificationReceiver.delegate = self;
 
 - The default value of `repeat` is `YES`, that means once the conditions are completed, the `NotificationReceiver` will reset and look forward the same conditions again. The situation is use for some the same requests you want to do again, ex: Click a button do 3 requests A, B, C, show the result after the requests are completed, then you can click again.
 
-
+- The default value of `enable` is `YES`, if set to `NO`,  The `NotificationReceiverDelegate` will not be called, and `checkConditionsWith` not work too.
+    
 #### Set `addObserver`, and set `NotificationConditioner`
 ```obj-c
 [notificationReceiver addObserver:self selector:@selector(completionNotifications:) conditioner:[[NotificationConditioner alloc] initWithName:GetUserProfileSuccessNotification minCount:1] ignoreable:YES object:nil];
 ```
 
 - `ignoreable`
-- If set `YES`, while you call `ignoreConditionerWithName` or `ignoreConditioner`, the specific notification would not manage by `checkConditionsWith`. It also triger the ignore delegaet:  `receivedIgnoreConditionerWithName:(NSString*)name` in the `NotificationReceiverDelegate`.
+    - If set `YES`, while you call `ignoreConditionerWithName` or `ignoreConditioner`, the specific notification would not manage by `checkConditionsWith`. It also triger the ignore delegaet:  `receivedIgnoreConditionerWithName:(NSString*)name` in the `NotificationReceiverDelegate`.
 
 - `minCount`
     - You can set `minCount` to help you promise the number of specific notification are called if verified by  `checkConditionsWith`.
@@ -75,11 +76,20 @@ notificationReceiver.delegate = self;
 }];
 ```
 
+#### Reset by `resetConditioners` 
+
+- You can call `resetConditioners` to make the conditions reset to default. Ex: Click logout button, discard all of the network requests and reset the conditions. 
+
+#### Call `removeObserver`
+
+- Don't forgot to remove observer while you not want to observe the notifications.
+
+
 ### Advanced settings
 
 - Use `SharedNotificationConditioner`.
-    - The use situation is when you want to do a common request, like `Login`. You just want to do it once, so if logined, then do something, else do `Login`.
-    - Use  `SharedNotificationConditioner` for `Login` request in the all of the page that you want to login first. Like Profile page, Friends page, etc....
+    - The situation for use is when you want to do a common request, like `Login`. You just want to do it once, so if logined, then do something, else do `Login`.
+    - Use  `SharedNotificationConditioner` for `Login` request in the all of the pages that you want to login first. Like Profile page, Friends page, etc....
     
 ```obj-c
 [notificationReceiver addObserver:self selector:@selector(completionNotifications:) conditioner:[[SharedNotificationConditioner sharedInstance] sharedNotificationConditionerWithName:LoginSuccessNotification minCount:1] ignoreable:YES object:nil];
