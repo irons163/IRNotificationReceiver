@@ -1,0 +1,16 @@
+PODS:
+  - IRNotificationReceiver (1.0.0)
+
+DEPENDENCIES:
+  - IRNotificationReceiver
+
+SPEC REPOS:
+  trunk:
+    - IRNotificationReceiver
+
+SPEC CHECKSUMS:
+  IRNotificationReceiver: d0f2a1a4aac584a9d64c277ac86f86a14164ce88
+
+PODFILE CHECKSUM: 2af9a388a0ae185a2764a10800820149f05b72e1
+
+COCOAPODS: 1.8.0.beta.2
